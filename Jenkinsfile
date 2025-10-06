@@ -1,68 +1,40 @@
-
 pipeline {
     agent any
-    
+
     stages {
         stage('Checkout') {
             steps {
-                echo '=== Récupération du code source ==='
-                git branch: 'main',
-                    url: 'https://github.com/Ethan-DNG/JenkinsProject.git'
+                git branch: 'main', url: 'https://github.com/loic1805/QualiteDev'
             }
         }
-        
-        stage('Vérification environnement') {
+
+        stage('Build') {
             steps {
-                echo '=== Vérification des outils ==='
-                sh '''
-                    gcc --version
-                    make --version
-                '''
+                echo 'Compilation du programme...'
+                sh 'make clean && make all'
             }
         }
-        
-        stage('Compilation') {
+
+        stage('Test') {
             steps {
-                echo '=== Compilation du programme ==='
-                sh '''
-                    make clean
-                    make
-                '''
+                echo 'Exécution des tests...'
+                sh 'bash test/test_bubble.sh'
             }
         }
-        
-        stage('Tests') {
-            steps {
-                echo '=== Exécution des tests unitaires ==='
-                sh 'make test'
-            }
-        }
-        
-        stage('Exécution') {
-            steps {
-                echo '=== Exécution du programme ==='
-                sh 'make run'
-            }
-        }
-        
+
         stage('Archive') {
             steps {
-                echo '=== Archivage des artefacts ==='
-                archiveArtifacts artifacts: 'build/*',
-                                fingerprint: true
+                archiveArtifacts artifacts: '**/output.txt', fingerprint: true
             }
         }
     }
-    
+
     post {
-        success {
-            echo 'Pipeline exécuté avec succès !'
+        always {
+            echo 'Pipeline terminé'
         }
         failure {
-            echo 'Le pipeline a échoué.'
-        }
-        always {
-            sh 'make clean || true'
+            echo 'Build ou test échoué !'
         }
     }
 }
