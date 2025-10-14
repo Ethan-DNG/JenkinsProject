@@ -231,7 +231,7 @@ int main() {
     printf("Tableau original: ");
     printStringArray(alphaArr, alphaSize);
     
-    // Créer des copies pour les tests
+    // créer des copies pour les tests
     char* alphaArrAsc[] = {"item2", "item10", "item1", "item20", "item3"};
     char* alphaArrDesc[] = {"item2", "item10", "item1", "item20", "item3"};
     
