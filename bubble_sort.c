@@ -122,39 +122,6 @@ void bubbleSortInt(int arr[], int n, SortOrder order) {
     }
 }
 
-// Tri à bulles pour les chaînes de caractères
-void bubbleSortString(char* arr[], int n, SortOrder order) {
-    int i, j;
-    bool swapped;
-    
-    for (i = 0; i < n - 1; i++) {
-        swapped = false;
-        for (j = 0; j < n - i - 1; j++) {
-            if (compareString(arr[j], arr[j + 1], order)) {
-                swapped = true;
-            }
-        }
-        if (!swapped) break;
-    }
-}
-
-// Tri à bulles alphanumérique
-void bubbleSortAlphanumeric(char* arr[], int n, SortOrder order) {
-    int i, j;
-    bool swapped;
-    
-    for (i = 0; i < n - 1; i++) {
-        swapped = false;
-        for (j = 0; j < n - i - 1; j++) {
-            if (compareAlphanumeric(arr[j], arr[j + 1], order)) {
-                swapString(&arr[j], &arr[j + 1]);
-                swapped = true;
-            }
-        }
-        if (!swapped) break;
-    }
-}
-
 // ============ FONCTIONS D'AFFICHAGE ============
 
 void printIntArray(int arr[], int size) {
