@@ -203,7 +203,7 @@ int main() {
     
     // Test 2: Tri de chaînes de caractères
     printf("2. Tri de chaînes de caractères:\n");
-    char* stringArr[] = {"banana", "apple", "cherry", "date", "elderberry"};
+    char* stringArr[] = {"banana", "shit", "cherry", "date", "elderberry"};
     int stringSize = 5;
     
     printf("Tableau original: ");
