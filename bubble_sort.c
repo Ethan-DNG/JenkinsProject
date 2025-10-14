@@ -131,7 +131,6 @@ void bubbleSortString(char* arr[], int n, SortOrder order) {
         swapped = false;
         for (j = 0; j < n - i - 1; j++) {
             if (compareString(arr[j], arr[j + 1], order)) {
-                swapString(&arr[j], &arr[j + 1]);
                 swapped = true;
             }
         }
