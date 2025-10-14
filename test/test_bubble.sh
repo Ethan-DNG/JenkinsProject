@@ -9,9 +9,9 @@ make clean && make all
 # on execute le programme et redirige la sortie vers un fichier
 ./bubble_sort > output.txt
 
-attendu = "=== Tests de tri avec différents types et ordres ===
+attendu = '=== Tests de tri avec différents types et ordres ===
 
-1. Tri d'entiers:
+1. Tri d entiers:
 Tableau original: 64 34 25 12 22 11 90 
 Tri croissant: 11 12 22 25 34 64 90 
 Tri décroissant: 90 64 34 25 22 12 11 
@@ -24,7 +24,7 @@ Tri décroissant: "elderberry" "date" "cherry" "banana" "apple"
 3. Tri alphanumérique:
 Tableau original: "item2" "item10" "item1" "item20" "item3" 
 Tri alphanumérique croissant: "item1" "item2" "item3" "item10" "item20" 
-Tri alphanumérique décroissant: "item20" "item10" "item3" "item2" "item1" "
+Tri alphanumérique décroissant: "item20" "item10" "item3" "item2" "item1" '
 
 # on verifie si la sortie contient le texte attendu
 if [ "$(cat output.txt)" == "$attendu" ]; then
