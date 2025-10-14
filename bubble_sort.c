@@ -122,6 +122,40 @@ void bubbleSortInt(int arr[], int n, SortOrder order) {
     }
 }
 
+// Tri à bulles pour les chaînes de caractères
+void bubbleSortString(char* arr[], int n, SortOrder order) {
+    int i, j;
+    bool swapped;
+    
+    for (i = 0; i < n - 1; i++) {
+        swapped = false;
+        for (j = 0; j < n - i - 1; j++) {
+            if (compareString(arr[j], arr[j + 1], order)) {
+                swapString(&arr[j], &arr[j + 1]);
+                swapped = true;
+            }
+        }
+        if (!swapped) break;
+    }
+}
+
+// Tri à bulles alphanumérique
+void bubbleSortAlphanumeric(char* arr[], int n, SortOrder order) {
+    int i, j;
+    bool swapped;
+    
+    for (i = 0; i < n - 1; i++) {
+        swapped = false;
+        for (j = 0; j < n - i - 1; j++) {
+            if (compareAlphanumeric(arr[j], arr[j + 1], order)) {
+                swapString(&arr[j], &arr[j + 1]);
+                swapped = true;
+            }
+        }
+        if (!swapped) break;
+    }
+}
+
 // ============ FONCTIONS D'AFFICHAGE ============
 
 void printIntArray(int arr[], int size) {
@@ -197,7 +231,7 @@ int main() {
     printf("Tableau original: ");
     printStringArray(alphaArr, alphaSize);
     
-    // créer des copies pour les tests
+    // Créer des copies pour les tests
     char* alphaArrAsc[] = {"item2", "item10", "item1", "item20", "item3"};
     char* alphaArrDesc[] = {"item2", "item10", "item1", "item20", "item3"};
     
