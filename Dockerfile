@@ -1,4 +1,3 @@
-# Dockerfile pour le projet Bubble Sort
 FROM gcc:latest
 
 WORKDIR /app
