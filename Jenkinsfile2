@@ -42,7 +42,6 @@ pipeline {
             steps {
                 archiveArtifacts artifacts: '**/output.txt', fingerprint: true
                 
-                // Optionnel: sauvegarder l'image Docker
                 script {
                     sh "sudo docker save ${DOCKER_IMAGE}:${DOCKER_TAG} -o ${DOCKER_IMAGE}-${DOCKER_TAG}.tar"
                     archiveArtifacts artifacts: "*.tar", fingerprint: true
