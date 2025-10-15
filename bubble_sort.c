@@ -201,7 +201,6 @@ int main() {
     
     printf("\n");
     
-    // Test 2: Tri de chaînes de caractères
     printf("2. Tri de chaînes de caractères:\n");
     char* stringArr[] = {"banana", "apple", "cherry", "date", "elderberry"};
     int stringSize = 5;
