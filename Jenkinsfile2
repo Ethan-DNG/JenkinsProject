@@ -27,16 +27,16 @@ pipeline {
             }
         }
 
-
-        stage('Test Docker Image') {
+        stage('Build Docker Image') {
             steps {
-                echo 'Test de l\'image Docker...'
+                echo 'Construction de l\'image Docker...'
                 script {
-                    // Tester l'image avec la commande du Dockerfile
-                    sh 'sudo docker run --rm bubblesort-c:latest'
+                    // Lancer la commande exacte du Dockerfile
+                    sh 'sudo docker build -t bubblesort-c:latest .'
                 }
             }
         }
+
 
         stage('Archive') {
             steps {
