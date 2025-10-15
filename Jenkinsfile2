@@ -32,7 +32,7 @@ pipeline {
                 echo 'Construction de l\'image Docker...'
                 script {
                     // Lancer la commande exacte du Dockerfile
-                    sh 'sudo docker build -t bubblesort-c:latest .'
+                    sh 'docker build -t bubblesort-c:latest .'
                 }
             }
         }
@@ -43,7 +43,7 @@ pipeline {
                 archiveArtifacts artifacts: '**/output.txt', fingerprint: true
                 
                 script {
-                    sh "sudo docker save ${DOCKER_IMAGE}:${DOCKER_TAG} -o ${DOCKER_IMAGE}-${DOCKER_TAG}.tar"
+                    sh "docker save ${DOCKER_IMAGE}:${DOCKER_TAG} -o ${DOCKER_IMAGE}-${DOCKER_TAG}.tar"
                     archiveArtifacts artifacts: "*.tar", fingerprint: true
                 }
             }
