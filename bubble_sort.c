@@ -202,14 +202,14 @@ int main() {
     printf("\n");
     
     printf("2. Tri de chaînes de caractères:\n");
-    char* stringArr[] = {"banana", "apple", "cherry", "date", "elderberry"};
+    char* stringArr[] = {"banana", "pamplemousse", "cherry", "date", "elderberry"};
     int stringSize = 5;
     
     printf("Tableau original: ");
     printStringArray(stringArr, stringSize);
     
     // Créer des copies pour les tests
-    char* stringArrAsc[] = {"banana", "apple", "cherry", "date", "elderberry"};
+    char* stringArrAsc[] = {"banana", "pamplemousse", "cherry", "date", "elderberry"};
     char* stringArrDesc[] = {"banana", "apple", "cherry", "date", "elderberry"};
     
     bubbleSortString(stringArrAsc, stringSize, ASCENDING);
